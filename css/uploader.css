@@ -76,16 +76,16 @@
    ========================================================================== */
 
 .user-avatar{
-    background-color: #505064;
+    background-color: #B4B4C8;
 }
 
 .user-avatar svg .bar {
-    stroke: #505064;
+    stroke: #B4B4C8;
     stroke-width: 8px;
 }
 
 .user-avatar img{
-    border: 8px solid #B4B4C8;
+    border: 8px solid #505064;
     transform: scale(1);
     
     -webkit-transform: scale(1);
@@ -99,14 +99,14 @@
 
 .user-avatar.drag-over img{
     transform: scale(.9);
-    border: 0px solid #505064;
+    border: 0px solid #B4B4C8;
 
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
 .user-avatar .percentage{
-    background: #B4B4C8;
+    background: #505064;
 }
 
 /* ==========================================================================
@@ -123,13 +123,13 @@
 }
 
 @-webkit-keyframes bluePulse {
-  0% { background-color: #505064; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 18px #B4B4C8; }
-  100% { background-color: #505064; -webkit-box-shadow: 0 0 9px #333; }
+  0% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #505064; -webkit-box-shadow: 0 0 18px #505064; }
+  100% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
 }
 
 @keyframes bluePulse {
-  0% { background-color: #505064; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 18px #B4B4C8; }
-  100% { background-color: #505064; -webkit-box-shadow: 0 0 9px #333; }
+  0% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #505064; -webkit-box-shadow: 0 0 18px #505064; }
+  100% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
 }
