@@ -27,3 +27,11 @@ Uploader is a free very simple and customizable html5 avatar uploader that you c
 * onServerProgress
 * onServerReadyStateChange
 * onSuccess
+
+
+## Dependency
+
+Uploader is written in plain javascript.
+It depends on :
+
+* [Classie.js](https://github.com/ded/bonzo) for class helper functions.
