@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Yukulelix | Uploader</title>
+        <meta name="description" content="A very simple and customizable html5 avatar uploader">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/uploader.css">
+    </head>
+    <body>
+
+        <div class="user-avatar">
+        </div>
+
+        <script src="js/classie.js"></script>
+        <script src="js/uploader.js"></script>
+        <script>
+
+            var div = document.body.querySelector(".user-avatar");
+            var upl = new Uploader(div, {
+                "basePhoto": "img/avatar-default.jpg",
+                "postUrl": "ajax/post.php"
+            });
+
+        </script>
+    </body>
+</html>
