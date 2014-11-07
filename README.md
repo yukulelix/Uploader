@@ -10,8 +10,9 @@ Uploader is a free very simple and customizable html5 avatar uploader that you c
 ### Basic Settings
 * name ("photo") : name sent in the POST request
 * basePhoto ("") : the default photo displayed at the beginning
-* postUrl ("") : the url to which is sent the POST reauest
+* postUrl ("") : the url to which is sent the POST request
 * imageTypes" (["image/jpeg","image/png"]) : the accepted images types
+* maxSize (null) : The max image size
 
 ### Advanced Settings
 * onClientAbort
