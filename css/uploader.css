@@ -32,8 +32,6 @@
 
 .user-avatar svg .bar {
     stroke: #333;
-    stroke-dasharray: 566;
-    stroke-dashoffset: 566;
     transform-origin: 50% 50%;
     stroke-width: 4px;
     fill: transparent;
@@ -75,17 +73,55 @@
    Add Some Styles
    ========================================================================== */
 
+body {
+    background: #F26663;
+    color: #fff;
+    font-weight: 300;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align:center;
+}
+
+h1{
+    width: 283px;
+    height: 153px;
+    margin: 20px auto 40px;
+    background: transparent url(../img/uploader.png) no-repeat;
+    text-indent: -9999px;
+}
+
+p{
+    font-weight: 700;
+}
+
+a{
+    display: inline-block;
+    margin: 10px auto;
+    color: #fff;
+    background-color: #34495e;
+    text-decoration: none;
+    padding: 10px 19px;
+    border-radius: 6px;
+
+    -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+    transition: border .25s linear,color .25s linear,background-color .25s linear;
+}
+
+a:hover{
+    background-color: #415b76;
+    border-color: #415b76;
+}
+
 .user-avatar{
-    background-color: #B4B4C8;
 }
 
 .user-avatar svg .bar {
-    stroke: #B4B4C8;
+    stroke: #fff;
     stroke-width: 8px;
 }
 
 .user-avatar img{
-    border: 8px solid #505064;
+    border: 8px solid rgba(0,0,0,.3);
     transform: scale(1);
     
     -webkit-transform: scale(1);
@@ -99,7 +135,7 @@
 
 .user-avatar.drag-over img{
     transform: scale(.9);
-    border: 0px solid #B4B4C8;
+    border: 0px solid rgba(0,0,0,.5);
 
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -122,14 +158,71 @@
 
 }
 
+.user-avatar.error{
+    -webkit-animation: shake .5s ease-in-out;
+    animation: shake .5s ease-in-out;
+}
+
 @-webkit-keyframes bluePulse {
-  0% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #505064; -webkit-box-shadow: 0 0 18px #505064; }
-  100% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
+    0% { 
+        background-color: rgba(0,0,0,.3);
+        -webkit-box-shadow: 0 0 9px #fff;
+    }
+    50% {
+        background-color: rgba(0,0,0,.5);
+        -webkit-box-shadow: 0 0 18px #eee;
+    }
+    100% {
+        background-color: rgba(0,0,0,.3);
+        -webkit-box-shadow: 0 0 9px #fff;
+    }
 }
 
 @keyframes bluePulse {
-  0% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #505064; -webkit-box-shadow: 0 0 18px #505064; }
-  100% { background-color: #B4B4C8; -webkit-box-shadow: 0 0 9px #333; }
+    0% { 
+        background-color: rgba(0,0,0,.3);
+        box-shadow: 0 0 9px #fff;
+    }
+    50% {
+        background-color: rgba(0,0,0,.5);
+        box-shadow: 0 0 18px #eee;
+    }
+    100% {
+        background-color: rgba(0,0,0,.3);
+        box-shadow: 0 0 9px #fff;
+    }
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+  }
+
+  40%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+  }
+
+  40%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+  }
 }

@@ -37,6 +37,7 @@
         	"image/jpeg",
         	"image/png"
         	],
+        "maxSize": null,
         "onClientAbort": null,
         "onClientError": null,
         "onClientLoad": null,
@@ -55,7 +56,6 @@
 	Uploader.prototype._init = function() {
 		var self = this;
 
-
 		self.el.innerHTML = 
 			'<img src="'+self.options.basePhoto+'"/>'+
 			'<svg viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">'+
@@ -70,6 +70,9 @@
 
 		var img = self.img.getAttribute("src");
 
+		self.l = 2*Math.PI*self.circle.getAttribute("r");
+		self.circle.style.strokeDasharray = self.l + ' ' + self.l; 
+		self.circle.style.strokeDashoffset = self.l;
 	}
 
 	Uploader.prototype._initEvents = function() {
@@ -92,13 +95,24 @@
 
 		self.el.addEventListener( 'drop', function(e) {
 			classie.remove( self.el, 'drag-over' );
-			var files = e.dataTransfer.files||e.target.files;
-			var mimeType= files[0].type;
-			if(self.options.imageTypes.indexOf(mimeType) > -1){
+			var files = e.dataTransfer.files||e.target.files,
+				mimeType = files[0].type,
+				errors = false,
+				size = files[0].size;
+
+			if(self.options.maxSize && (size > self.options.maxSize)){
+				errors = true;
+			}
+
+			if(self.options.imageTypes.indexOf(mimeType) < 0){
+				errors = true;
+			}
+
+			if(!errors){
 				self._fileHandler(files[0]);
 			}
 			else{
-				// TOdo Validation
+				classie.add( self.el, 'error' );
 			}
 			e.preventDefault();
 		});
@@ -222,7 +236,7 @@
 		if (val < 0) { val = 0;}
 		if (val > 100) { val = 100;}
 
-		var pct = 277+(1-val/100)*(566-277);
+		var pct = Math.floor((1-val/100)*self.l);
 
 		self.span.innerHTML = Math.floor(val)+"%";
 		self.circle.style.strokeDashoffset = pct;
@@ -233,6 +247,7 @@
 			
 		classie.remove( self.el, 'upload-ended' );
 		classie.remove( self.el, 'upload-started' );
+		classie.remove( self.el, 'error' );
 		self._setPercentage(0);
 	}
 
