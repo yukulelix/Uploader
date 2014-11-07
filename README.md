@@ -35,4 +35,4 @@ Uploader is a free very simple and customizable html5 avatar uploader that you c
 Uploader is written in plain javascript.
 It depends on :
 
-* [Classie.js](https://github.com/ded/bonzo) for class helper functions.
+* [Classie.js](https://github.com/desandro/classie) for class helper functions.
