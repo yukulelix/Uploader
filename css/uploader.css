@@ -116,7 +116,7 @@ a:hover{
 }
 
 .user-avatar svg .bar {
-    stroke: #fff;
+    stroke: rgba(255,255,255,.9);
     stroke-width: 8px;
 }
 
@@ -142,7 +142,9 @@ a:hover{
 }
 
 .user-avatar .percentage{
-    background: #B4B4C8;
+    background: rgba(255,255,255,.9);
+    color: #333;
+    font-weight: bold;
 }
 
 /* ==========================================================================
