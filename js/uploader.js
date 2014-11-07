@@ -98,7 +98,7 @@
 				self._fileHandler(files[0]);
 			}
 			else{
-				console.log("non non non");
+				// TOdo Validation
 			}
 			e.preventDefault();
 		});
@@ -179,9 +179,6 @@
 			}
 			if (e.lengthComputable) {
 			    var val = (e.loaded / e.total) * 100;
-
-			    console.log(val);
-
 				self._setPercentage(val);
 			}
 		};
